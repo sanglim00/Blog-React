@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Buttons, ListWrap, ThumbnailWrap, Wrap } from "./Styles";
 import ThumbnailCard from "../../componenets/Cards/ThumbnailCard";
 import ListCard from "../../componenets/Cards/ListCard";
+import { Titles } from "../../data/titles";
 
 function Main() {
   const [Type, setType] = useState("thumbnail");
@@ -24,19 +25,15 @@ function Main() {
       </Buttons>
       {Type === "thumbnail" ? (
         <ThumbnailWrap>
-          <ThumbnailCard />
-          <ThumbnailCard />
-          <ThumbnailCard />
-          <ThumbnailCard />
-          <ThumbnailCard />
+          {Titles.map((title) => (
+            <ThumbnailCard title={title} />
+          ))}
         </ThumbnailWrap>
       ) : (
         <ListWrap>
-          <ListCard />
-          <ListCard />
-          <ListCard />
-          <ListCard />
-          <ListCard />
+          {Titles.map((title) => (
+            <ListCard title={title} />
+          ))}
         </ListWrap>
       )}
     </Wrap>

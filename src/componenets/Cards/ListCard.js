@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { List } from "./Styles";
+import { useNavigate } from "react-router";
 
-const ListCard = () => {
+const ListCard = (props) => {
+  const [info, setInfo] = useState(props.title);
+  const navigate = useNavigate();
+
   return (
-    <List>
+    <List onClick={() => navigate(`/${info.id}`)}>
       <img src={""} />
       <div>
-        <div>Title</div>
-        <span>sub title</span>
+        <div>{info.id}</div>
+        <span>{info.id}</span>
       </div>
     </List>
   );

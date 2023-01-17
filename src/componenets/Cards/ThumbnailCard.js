@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router";
 import { Thumbnail } from "./Styles";
 
-const ThumbnailCard = () => {
+const ThumbnailCard = (props) => {
+  const [info, setInfo] = useState(props.title);
+  const navigate = useNavigate();
+
   return (
-    <Thumbnail>
+    <Thumbnail onClick={() => navigate(`/${info.id}`)}>
       <img src={""} />
       <div>
-        <div>Title</div>
-        <span>sub title</span>
+        <div>{info.id}</div>
+        <span>{info.id}</span>
       </div>
     </Thumbnail>
   );
