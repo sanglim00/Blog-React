@@ -1,11 +1,33 @@
 import styled from "styled-components";
 
 export const Wrap = styled.div`
-  width: 100%;
-  max-width: 1140px;
-  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+`;
 
-  @media screen and (max-width: 1040px) {
-    padding: 0 20px;
+export const ImgWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  > img {
+    max-width: 300px;
+    max-height: 400px;
+    object-fit: contain;
+  }
+
+  > input {
+    display: none;
+  }
+
+  > button {
+    all: unset;
+    cursor: pointer;
+    border-radius: 12px;
+    padding: 4px 16px;
+    background-color: #ffbebe;
   }
 `;
